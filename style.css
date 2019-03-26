@@ -1,0 +1,48 @@
+
+/* Grid Areas and background color */
+.header { grid-area: header;
+	background-color: red; }
+.content { grid-area: content;
+	background-color: green; }
+.left { grid-area: left;
+	background-color: blue; }
+.right { grid-area: right;
+	background-color: yellow; }
+.footer { grid-area: footer;
+	background-color: purple; }
+
+
+
+.grid {
+	display: grid;
+	grid-template-areas: "header header header"
+	                     "left content right"
+	                     "footer footer footer";
+
+	grid-template-columns: 20% 1fr 20%;
+
+	grid-template-rows: 100px 
+											1fr 
+											30px;
+
+	min-height: 100vh;
+}
+
+
+/* Breakpoint at 425px */
+@media screen and (max-width: 425px) {
+	.grid {
+		grid-template-areas: "header"
+		                     "left"
+		                     "content"
+		                     "right"
+		                     "footer";
+
+		grid-template-columns: 100%;
+		grid-template-rows: 100px 
+												50px 
+												1fr
+												50px 
+												30px;
+	}
+}
